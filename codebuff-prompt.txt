@@ -1,0 +1,23 @@
+
+Hey Codebuff! Write up a plan briefly before executing, but here's what I want. It's a single page prototype of what I'm calling "interview markets", ie: one-sided prediction markets for interviews. The website should look like: a) first a normal sorts careers page, of a modern startup. Make it look pretty, using tailwind. Talk about eg: the company, benefits etc. b) A list of jobs to apply for, maybe like 5. make it a software company, so mostly engineering roles, and maybe marketing/design too. c) A list of markets. Each market should be this little row-card kinda thing, with a candidate name, a profile pic, the role they're applying for, and a "bar" on the right that can get filled up to $10k, maybe w/ an indicator like $2.1k/$10k or so. The candidate's profile should also have links to: a) Twitter, b) Linkedin, c) Resume. These will all be small cute icons, using lucide. On the right side of the bar, there should be a button called "Refer", which will allow you to bet on the market. Lastly, add a "How it works" button in the interview markets section, but above all the markets. For now: don't worry about the "Refer", "How it works" and "Apply" buttons, but they'll all be modals that I'll help you set up content for later.
+
+<— codebuff got stuck on eslint and I had to help here —>
+
+okay nice - i generally like it. remove the about us section. make the website look a little "tighter" rather than as airy as it is rn, ie: smaller cards, a little more minimalist.
+
+awesome! thanks! could you make things like narrower? maybe a smaller max width on the cards? it's a little wide on desktop
+
+<— did some manual styling here —>
+
+okay awesome! make a new component for the "how-it-works" - it's gonna me a modal. the main idea is: it starts with a description at the top, something like: "Get a referral bonus for backing promising candidates - we send you 5x your deposit if they accept a job with us and remain for at least 30 days". Then, for clarification, have a "Details" bit, and then a 2-column layout, where on the left side there's an outcome, which is one of ("YES" 5x under it), "NO" (0x under it") and "N/A" (1x under it") - they're in green, grey, red respectively. And each row is one of the following pieces of data: N/A, "We do not interview the candidate within 3 months of their application", N/A: "We offer the candidate an interview but they decline it", NO: "We interview the candidate and reject them", N/A: "We extend an offer to the candidate but they don't accept within 1 month", N/A: "We extend an offer to the candidate, and they accept but we part ways within 1 month", YES: "We extend an offer to the candidate, and they accept, and are still working with us after 30 days"
+
+<— did some manual copy tweaks here —>
+
+Add a "recently closed markets" back on the main page, and add 3 example closed markets, one with a resolution YES, and two with a resolution N/A
+
+i like it - just make it look a little more like the modal, in that: a) make it a big YES or N/A on the right side, b) don't show $ amount anymore, c) don't show 1x or 5x multiplier anymore. d) do keep showing the reason, but keep it current size, ie p small
+
+<— did some manual copy + style tweaks here —>
+ <— started a new session here —>
+
+Hey! Take a look at page.tsx and howitworksmodal. Make a super simple Apply modal that follows the same style: you just submit your name, Twitter URL, Linkedin URL, resume URL, and personal website URL. All except the name are optional.
